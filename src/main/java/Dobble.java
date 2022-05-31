@@ -1,16 +1,23 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Dobble{
     int N;
-    ArrayList<Object> Mazo;
+    int numeroCartas;
+    ArrayList<Object> mazo;
+    ArrayList<String> elementos;
+    int seed;
+
+    public Dobble(ArrayList<String> elementos,int N, int numeroCartas, int seed) {
+    }
+
     public static void main(String[] args) {
         System.out.println(generacionMazo(3));
         System.out.println(primeraCarta(generacionMazo(3)));
         System.out.println(numCards(generacionMazo(3)));
         System.out.println(cardsSetToString(generacionMazo(3)));
     }
-        static ArrayList<Object> generacionMazo(int N) {
+    static ArrayList<Object> generacionMazo(int N) {
         ArrayList<Object> mazo = new ArrayList<Object>();
             ArrayList<Integer> firstCard = new ArrayList<Integer>();
             int i, j, k;
@@ -37,15 +44,12 @@ public class Dobble{
                 }
             }
             return mazo;
-        }
-        static int numCards(ArrayList mazo){
+        }static int numCards(ArrayList mazo){
             return mazo.size();
         }
-        static ArrayList<Object> primeraCarta(ArrayList mazo){
-            return (ArrayList<Object>) mazo.get(0);
-
-        }
-        static String cardsSetToString(ArrayList mazo) {
+    static ArrayList<Object> primeraCarta(ArrayList mazo){
+            return (ArrayList<Object>) mazo.get(0);}
+    static String cardsSetToString(ArrayList mazo) {
             StringBuilder CardsString = new StringBuilder();
             int i = 1;
             for (Object carta : mazo) {
@@ -60,6 +64,46 @@ public class Dobble{
             String CardsSetToString = CardsString.toString();
             return CardsSetToString;
         }
+
+    public int getN() {
+        return N;
     }
+
+    public void setN(int n) {
+        N = n;
+    }
+
+    public int getNumeroCartas() {
+        return numeroCartas;
+    }
+
+    public void setNumeroCartas(int numeroCartas) {
+        this.numeroCartas = numeroCartas;
+    }
+
+    public ArrayList<Object> getMazo() {
+        return mazo;
+    }
+
+    public void setMazo(ArrayList<Object> mazo) {
+        this.mazo = mazo;
+    }
+
+    public ArrayList<String> getElementos() {
+        return elementos;
+    }
+
+    public void setElementos(ArrayList<String> elementos) {
+        this.elementos = elementos;
+    }
+
+    public int getSeed() {
+        return seed;
+    }
+
+    public void setSeed(int seed) {
+        this.seed = seed;
+    }
+}
 
 
