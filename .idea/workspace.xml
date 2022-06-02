@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c044e8e-90c4-4050-990b-ae0a0c41bded" name="Changes" comment="Constructores y getter and setters">
+    <list default="true" id="0c044e8e-90c4-4050-990b-ae0a0c41bded" name="Changes" comment="Constructor DOBBLE mas a fondo">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Cards.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Dobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dobble.java" afterDir="false" />
     </list>
@@ -37,15 +38,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "project.propGUI"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propGUI&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.Dobble">
     <configuration name="Cartas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Cartas" />
@@ -105,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653963140815</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Constructor DOBBLE mas a fondo">
+      <created>1654050959283</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1654050959283</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -124,6 +132,7 @@
     <MESSAGE value="Generacion de Mazo como metodo" />
     <MESSAGE value="CardsToString" />
     <MESSAGE value="Constructores y getter and setters" />
-    <option name="LAST_COMMIT_MESSAGE" value="Constructores y getter and setters" />
+    <MESSAGE value="Constructor DOBBLE mas a fondo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Constructor DOBBLE mas a fondo" />
   </component>
 </project>
