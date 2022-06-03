@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c044e8e-90c4-4050-990b-ae0a0c41bded" name="Changes" comment="Constructor DOBBLE mas a fondo">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Cards.java" afterDir="false" />
+    <list default="true" id="0c044e8e-90c4-4050-990b-ae0a0c41bded" name="Changes" comment="Clase Cards">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cards.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Dobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dobble.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654050959283</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Clase Cards">
+      <created>1654131426281</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1654131426281</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -133,6 +141,7 @@
     <MESSAGE value="CardsToString" />
     <MESSAGE value="Constructores y getter and setters" />
     <MESSAGE value="Constructor DOBBLE mas a fondo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Constructor DOBBLE mas a fondo" />
+    <MESSAGE value="Clase Cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clase Cards" />
   </component>
 </project>

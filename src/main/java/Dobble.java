@@ -9,6 +9,14 @@ public class Dobble{
 
     public static void main(String[] args) {
         Dobble dobble = new Dobble(7,30);
+        dobble.generacionMazo(3);
+        System.out.println(dobble.getMazo());
+        Card X =  new Card();
+        X = (Card) dobble.mazo.get(0);
+        System.out.println(X);
+        System.out.println(X.getElementos());
+
+
     }
 
     public Dobble(int numElementos, int numeroCartas) {
@@ -16,7 +24,34 @@ public class Dobble{
         numCartas = numeroCartas;
 
     }
+    void generacionMazo(int N) {
+        ArrayList<Object> mazo = new ArrayList<Object>();
+        int i, j, k;
 
+        Card x = new Card();
+        for (i = 1; i <= N + 1; i++) {
+            x.Elementos.add(i);
+        }
+        mazo.add(x);
+        for (i = 1; i <= N; i++) {
+            Card y = new Card();
+            y.Elementos.add(1);
+            for (j = 1; j <= N; j++) {
+                y.Elementos.add(i * N + (j + 1));
+            }
+            mazo.add(y);
+        }
+        for (i = 1; i <= N; i++) {
+            for (j = 1; j <= N; j++) {
+                Card z = new Card();
+                z.Elementos.add(i + 1);
+                for (k = 1; k <= N; k++) {
+                    z.Elementos.add(N + 2 + N * (k - 1) + (((i - 1) * (k - 1) + j - 1) % N));
+                }
+                mazo.add(z);
+            }
+        }
+        this.mazo = mazo;
     }
 
     static int numCards(ArrayList mazo){
