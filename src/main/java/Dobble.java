@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Dobble{
@@ -15,6 +14,8 @@ public class Dobble{
         X = (Card) dobble.mazo.get(0);
         System.out.println(X);
         System.out.println(X.getElementos());
+        System.out.println(cardsSetToString(dobble.mazo));
+
 
 
     }
@@ -59,7 +60,7 @@ public class Dobble{
         }
     static ArrayList<Object> primeraCarta(ArrayList mazo){
             return (ArrayList<Object>) mazo.get(0);}
-    static String cardsSetToString(ArrayList mazo) {
+    static String cardsSetToString(ArrayList<Object> mazo) {
             StringBuilder CardsString = new StringBuilder();
             int i = 1;
             for (Object carta : mazo) {
