@@ -1,16 +1,16 @@
 import java.util.ArrayList;
 
 public class Card {
-    public ArrayList<Object> Elementos;
+    public ArrayList<Integer> Elementos;
     public Card(){
-        Elementos = new ArrayList<Object>();
+        Elementos = new ArrayList<Integer>();
     }
 
-    public ArrayList<Object> getElementos() {
+    public ArrayList<Integer> getElementos() {
         return Elementos;
     }
 
-    public void setElementos(ArrayList<Object> elementos) {
+    public void setElementos(ArrayList<Integer> elementos) {
         Elementos = elementos;
     }
 }

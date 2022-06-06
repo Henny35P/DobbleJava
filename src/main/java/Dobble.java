@@ -1,23 +1,21 @@
+import java.lang.reflect.Array;
+import java.lang.reflect.Constructor;
 import java.util.ArrayList;
+import java.util.Collections;
 
-public class Dobble{
+public class Dobble {
     int numE;
     int numCartas;
-    ArrayList<Object> mazo;
+    ArrayList<Card> mazo;
     ArrayList<String> listaElementos;
 
     public static void main(String[] args) {
-        Dobble dobble = new Dobble(7,30);
+        Dobble dobble = new Dobble(7, 30);
         dobble.generacionMazo(3);
-        System.out.println(dobble.getMazo());
-        Card X =  new Card();
-        X = (Card) dobble.mazo.get(0);
-        System.out.println(X);
-        System.out.println(X.getElementos());
-        System.out.println(cardsSetToString(dobble.mazo));
-
-
-
+        dobble.isDobble(dobble.mazo);
+        //ArrayList<Card> X = dobble.getMazo();
+        //Collections.shuffle(X);
+        //System.out.println(cardsSetToString(dobble.mazo));
     }
 
     public Dobble(int numElementos, int numeroCartas) {
@@ -25,8 +23,9 @@ public class Dobble{
         numCartas = numeroCartas;
 
     }
+
     void generacionMazo(int N) {
-        ArrayList<Object> mazo = new ArrayList<Object>();
+        ArrayList<Card> mazo = new ArrayList<Card>();
         int i, j, k;
 
         Card x = new Card();
@@ -52,29 +51,50 @@ public class Dobble{
                 mazo.add(z);
             }
         }
-        this.mazo = mazo;
+        Collections.shuffle(mazo);
+        setMazo(mazo);
+        setnumCartas(mazo.size());
     }
 
-    static int numCards(ArrayList mazo){
-            return mazo.size();
+    static int numCards(ArrayList mazo) {
+        return mazo.size();
+    }
+
+    static ArrayList<Object> primeraCarta(ArrayList mazo) {
+        return (ArrayList<Object>) mazo.get(0);
+    }
+
+    String cardsSetToString(ArrayList<Card> mazo) {
+        StringBuilder CardsString = new StringBuilder();
+        int i = 0;
+        for (Card carta : mazo) {
+            String cartaString = carta.getElementos().toString();
+            CardsString.append("Carta ");
+            CardsString.append(i + 1);
+            CardsString.append(": ");
+            CardsString.append(cartaString);
+            CardsString.append("\n");
+            i++;
         }
-    static ArrayList<Object> primeraCarta(ArrayList mazo){
-            return (ArrayList<Object>) mazo.get(0);}
-    static String cardsSetToString(ArrayList<Object> mazo) {
-            StringBuilder CardsString = new StringBuilder();
-            int i = 1;
-            for (Object carta : mazo) {
-                String cartaString = carta.toString();
-                CardsString.append("Carta ");
-                CardsString.append(i);
-                CardsString.append(": ");
-                CardsString.append(cartaString);
-                CardsString.append("\n");
-                i++;
+        String CardsSetToString = CardsString.toString();
+        return CardsSetToString;
+    }
+
+    boolean isDobble (ArrayList<Card> mazo) {
+        int i = 0;
+        for (Card carta : mazo){
+            for (Card carta2 : mazo) {
+                if (carta.equals(carta2)){
+                    i++;
+                }
             }
-            String CardsSetToString = CardsString.toString();
-            return CardsSetToString;
+            if (i > mazo.size()){
+                return false;
+            }
         }
+
+        return true;
+    }
 
     public int getnumCartas() {
         return numCartas;
@@ -84,11 +104,11 @@ public class Dobble{
         this.numCartas = numCartas;
     }
 
-    public ArrayList<Object> getMazo() {
+    public ArrayList<Card> getMazo() {
         return mazo;
     }
 
-    public void setMazo(ArrayList<Object> mazo) {
+    public void setMazo(ArrayList<Card> mazo) {
         this.mazo = mazo;
     }
 
@@ -97,7 +117,7 @@ public class Dobble{
     }
 
     public void setNumE(int numE) {
-        this.numE= numE;
+        this.numE = numE;
     }
 
     public ArrayList<String> getListaElementos() {
