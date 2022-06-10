@@ -2,17 +2,32 @@ import java.util.ArrayList;
 
 public class DobbleGame {
     private ArrayList<Player> players;
-    private Dobble cardsSet;
+    private static Dobble cardsSet;
     private int numPlayers;
 
 
-    public DobbleGame(DobbleGame game, ArrayList<Player> players, Dobble cardsSet, int numPlayers) {
+    public DobbleGame(ArrayList<Player> players, Dobble cardsSet, int numPlayers) {
         this.players = players;
         this.cardsSet = cardsSet;
     }
 
+    public static void main(String[] args) {
+        DobbleGame X = new DobbleGame(4, );
+        System.out.println(stackMode(X.cardsSet));
+    }
 // Considerar como booleano/Integer
     // Verlo con exceptions
+
+    static public ArrayList<Card> stackMode (Dobble cardsSet){
+        ArrayList<Card> X = cardsSet.getMazo();
+        for (int i = 0; i < 2 ; i++ ){
+            X.get(i);
+        }
+
+
+
+    }
+
     void registerPlayer(String nombre){
         if (players.size() > numPlayers){
             System.out.println("Maximo de Jugadores"); // Poner con exceptions
