@@ -26,30 +26,30 @@ public class Dobble {
     }
 
     void generacionMazo(int numE) {
-        int N = this.numCartas - 1;
+        int N = this.numE - 1;
         int num = this.numCartas;
         ArrayList<Card> cardsSet = new ArrayList<Card>();
         int i, j, k;
 
         Card x = new Card();
         for (i = 1; i <= N + 1; i++) {
-            x.Elementos.add(i);
+            x.Elementos.add(String.valueOf(i));
         }
         cardsSet.add(x);
         for (i = 1; i <= N; i++) {
             Card y = new Card();
-            y.Elementos.add(1);
+            y.Elementos.add(String.valueOf(1));
             for (j = 1; j <= N; j++) {
-                y.Elementos.add(i * N + (j + 1));
+                y.Elementos.add(String.valueOf(i * N + (j + 1)));
             }
             cardsSet.add(y);
         }
         for (i = 1; i <= N; i++) {
             for (j = 1; j <= N; j++) {
                 Card z = new Card();
-                z.Elementos.add(i + 1);
+                z.Elementos.add(String.valueOf(i + 1));
                 for (k = 1; k <= N; k++) {
-                    z.Elementos.add(N + 2 + N * (k - 1) + (((i - 1) * (k - 1) + j - 1) % N));
+                    z.Elementos.add(String.valueOf(N + 2 + N * (k - 1) + (((i - 1) * (k - 1) + j - 1) % N)));
                 }
                 cardsSet.add(z);
             }
@@ -79,10 +79,11 @@ public class Dobble {
         return (Card) cardsSet.get(0);
     }
 
-    String cardsSetToString(ArrayList<Card> cardsSet) {
+    String cardsSetToString() {
+        ArrayList<Card> X = this.cardsSet;
         StringBuilder CardsString = new StringBuilder();
         int i = 0;
-        for (Card carta : cardsSet) {
+        for (Card carta : X) {
             String cartaString = carta.getElementos().toString();
             CardsString.append("Carta ");
             CardsString.append(i + 1);
@@ -105,9 +106,9 @@ public class Dobble {
         }
         // Elementos solo se repiten una vez
         for (Card carta : cardsSet){
-            Set<Integer> X = carta.Elementos.stream().collect(Collectors.toSet());
+            Set<String> X = carta.Elementos.stream().collect(Collectors.toSet());
             for (Card carta2 : cardsSet) {
-                Set<Integer> Y = carta2.Elementos.stream().collect(Collectors.toSet());
+                Set<String> Y = carta2.Elementos.stream().collect(Collectors.toSet());
                 Y.retainAll(X);
                 if (Y.size() > 1) {
                     j++;

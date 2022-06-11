@@ -1,31 +1,57 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class DobbleGame {
     private ArrayList<Player> players;
-    private static Dobble cardsSet;
+    private static Dobble mazo;
     private int numPlayers;
 
 
-    public DobbleGame(ArrayList<Player> players, Dobble cardsSet, int numPlayers) {
+    public DobbleGame(Dobble cardsSet, int numPlayers) {
         this.players = players;
-        this.cardsSet = cardsSet;
+        this.mazo = cardsSet;
     }
 
     public static void main(String[] args) {
-        DobbleGame X = new DobbleGame(4, );
-        System.out.println(stackMode(X.cardsSet));
+        Dobble Y = new Dobble(4,-5);
+        Y.generacionMazo(Y.numE);
+        DobbleGame X = new DobbleGame(Y,4);
+        System.out.println(match(stackMode(Y)));
     }
 // Considerar como booleano/Integer
     // Verlo con exceptions
 
-    static public ArrayList<Card> stackMode (Dobble cardsSet){
+    // Editar esto
+    public static ArrayList<String> stackMode (Dobble cardsSet){
         ArrayList<Card> X = cardsSet.getMazo();
+        ArrayList<String> Y = new ArrayList<>();
         for (int i = 0; i < 2 ; i++ ){
-            X.get(i);
+
+            Y.addAll(X.get(i).getElementos());
         }
+        return Y;
+    }
 
+    void play (String X){
+        if (X == "null"){
+            stackMode(this.mazo);
+        }
+        if (X == "pass"){
 
+        }
+        if (X == "spotit"){
 
+        }
+    }
+    static String match(ArrayList<String> cartas){
+        HashSet X = new HashSet();
+        for (String elemento : cartas){
+            if (X.add(elemento) == false){
+                return elemento;
+            }
+        }
+        return "ERROR";
     }
 
     void registerPlayer(String nombre){
@@ -55,11 +81,11 @@ public class DobbleGame {
     }
 
     public Dobble getCardsSet() {
-        return cardsSet;
+        return mazo;
     }
 
-    public void setCardsSet(Dobble cardsSet) {
-        this.cardsSet = cardsSet;
+    public void setCardsSet(Dobble mazo) {
+        this.mazo = mazo;
     }
 
     public int getNumPlayers() {
