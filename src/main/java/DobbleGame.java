@@ -39,8 +39,10 @@ public class DobbleGame {
         }
         if (X == "pass"){
 
+
         }
         if (X == "spotit"){
+            // ++ points si match == string
 
         }
     }
