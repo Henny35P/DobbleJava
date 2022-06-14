@@ -1,6 +1,6 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Scanner;
 
 public class DobbleGame {
     private ArrayList<Player> players;
@@ -17,7 +17,7 @@ public class DobbleGame {
         Dobble Y = new Dobble(4,-5);
         Y.generacionMazo(Y.numE);
         DobbleGame X = new DobbleGame(Y,4);
-        System.out.println(match(stackMode(Y)));
+        System.out.println(stackMode(Y));
     }
 // Considerar como booleano/Integer
     // Verlo con exceptions
@@ -37,13 +37,26 @@ public class DobbleGame {
         if (X == "null"){
             stackMode(this.mazo);
         }
-        if (X == "pass"){
-
+        else if (X == "pass"){
+            this.players.add(this.players.get(0));
+            this.players.remove(0);
+        }
+        else if (X == "spotit") {
+            stackMode(this.mazo);
+            Scanner myScanner = new Scanner(System.in);
+            String respuesta = myScanner.nextLine();
+            if (respuesta == (match(stackMode(this.mazo)))){
+                Player actual = this.players.get(0);
+                actual.setPuntaje(actual.getPuntaje() + 1);
+            }
+            ArrayList<Card> nuevoMazo = this.mazo.getMazo();
+            this.mazo.setMazo(nuevoMazo);
+            this.players.add(this.players.get(0));
+            this.players.remove(0);
 
         }
-        if (X == "spotit"){
-            // ++ points si match == string
-
+        else {
+            System.out.println("NO ingreso comando");
         }
     }
     static String match(ArrayList<String> cartas){

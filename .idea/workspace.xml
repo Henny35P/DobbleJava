@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c044e8e-90c4-4050-990b-ae0a0c41bded" name="Changes" comment="stackmode Iniciado">
+    <list default="true" id="0c044e8e-90c4-4050-990b-ae0a0c41bded" name="Changes" comment="play desarollo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dobble.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DobbleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DobbleGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -179,7 +177,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654832525810</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="play iniciado">
+      <created>1654916990615</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1654916990615</updated>
+    </task>
+    <task id="LOCAL-00014" summary="play desarollo">
+      <created>1655005267058</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1655005267058</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -206,6 +218,8 @@
     <MESSAGE value="&#10;Funcion missingCards y MaxC" />
     <MESSAGE value="Dobble Game Iniciado" />
     <MESSAGE value="stackmode Iniciado" />
-    <option name="LAST_COMMIT_MESSAGE" value="stackmode Iniciado" />
+    <MESSAGE value="play iniciado" />
+    <MESSAGE value="play desarollo" />
+    <option name="LAST_COMMIT_MESSAGE" value="play desarollo" />
   </component>
 </project>
