@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c044e8e-90c4-4050-990b-ae0a0c41bded" name="Changes" comment="play desarollo">
+    <list default="true" id="0c044e8e-90c4-4050-990b-ae0a0c41bded" name="Changes" comment="dobble play cmopleto">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dobble.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DobbleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DobbleGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -54,7 +57,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DobbleGame">
+  <component name="RunManager" selected="Application.Menu">
     <configuration name="Cartas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Cartas" />
       <module name="DobbleJava.main" />
@@ -76,8 +79,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Menu" />
+      <module name="DobbleJava.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Menu" />
         <item itemvalue="Application.DobbleGame" />
         <item itemvalue="Application.Dobble" />
         <item itemvalue="Application.Cartas" />
@@ -191,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655005267058</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="dobble play cmopleto">
+      <created>1655180556376</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1655180556376</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -220,6 +238,7 @@
     <MESSAGE value="stackmode Iniciado" />
     <MESSAGE value="play iniciado" />
     <MESSAGE value="play desarollo" />
-    <option name="LAST_COMMIT_MESSAGE" value="play desarollo" />
+    <MESSAGE value="dobble play cmopleto" />
+    <option name="LAST_COMMIT_MESSAGE" value="dobble play cmopleto" />
   </component>
 </project>

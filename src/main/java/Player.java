@@ -1,10 +1,9 @@
 public class Player {
     String nombre;
-    Integer puntaje;
+    Integer puntaje = 0;
 
-    public Player(String nombre, Integer puntaje) {
-        this.nombre = nombre;
-        this.puntaje = puntaje;
+    public Player(String nombreJugador) {
+        this.nombre = nombreJugador;
     }
 
     public String getNombre() {

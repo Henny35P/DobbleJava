@@ -79,7 +79,8 @@ public class Dobble {
         return (Card) cardsSet.get(0);
     }
 
-    String cardsSetToString() {
+    @Override
+    public String toString() {
         ArrayList<Card> X = this.cardsSet;
         StringBuilder CardsString = new StringBuilder();
         int i = 0;

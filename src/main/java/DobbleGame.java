@@ -4,20 +4,17 @@ import java.util.Scanner;
 
 public class DobbleGame {
     private ArrayList<Player> players;
-    private static Dobble mazo;
+    private Dobble mazo;
     private int numPlayers;
 
 
-    public DobbleGame(Dobble cardsSet, int numPlayers) {
-        this.players = players;
+    public DobbleGame(Dobble cardsSet, int numJugadores) {
+        this.players = new ArrayList<Player>();
+        this.numPlayers = numJugadores;
         this.mazo = cardsSet;
     }
 
     public static void main(String[] args) {
-        Dobble Y = new Dobble(4,-5);
-        Y.generacionMazo(Y.numE);
-        DobbleGame X = new DobbleGame(Y,4);
-        System.out.println(stackMode(Y));
     }
 // Considerar como booleano/Integer
     // Verlo con exceptions
@@ -42,14 +39,18 @@ public class DobbleGame {
             this.players.remove(0);
         }
         else if (X == "spotit") {
-            stackMode(this.mazo);
+            System.out.println(stackMode(this.mazo));
             Scanner myScanner = new Scanner(System.in);
             String respuesta = myScanner.nextLine();
-            if (respuesta == (match(stackMode(this.mazo)))){
+            String cartaCorrecta = match(stackMode(this.getCardsSet()));
+
+            if ( cartaCorrecta.equals(respuesta)){
                 Player actual = this.players.get(0);
                 actual.setPuntaje(actual.getPuntaje() + 1);
             }
             ArrayList<Card> nuevoMazo = this.mazo.getMazo();
+            nuevoMazo.remove(0);
+            nuevoMazo.remove(0);
             this.mazo.setMazo(nuevoMazo);
             this.players.add(this.players.get(0));
             this.players.remove(0);
@@ -59,7 +60,7 @@ public class DobbleGame {
             System.out.println("NO ingreso comando");
         }
     }
-    static String match(ArrayList<String> cartas){
+    String match(ArrayList<String> cartas){
         HashSet X = new HashSet();
         for (String elemento : cartas){
             if (X.add(elemento) == false){
@@ -70,16 +71,18 @@ public class DobbleGame {
     }
 
     void registerPlayer(String nombre){
-        if (players.size() > numPlayers){
+
+        if (this.getPlayers().size() > numPlayers){
             System.out.println("Maximo de Jugadores"); // Poner con exceptions
         }
-        for (Player player : this.players){
-            if (nombre == player.nombre){
+        for (Player player : this.getPlayers()){
+            if (nombre.equals(player.getNombre())){
                 System.out.println("Nombre repetido"); // Igualmente
             }
         }
-        Player player = new Player(nombre,0);
+        Player player = new Player(nombre);
         players.add(player);
+
     }
 
     String whoseTurnIsIt(){
