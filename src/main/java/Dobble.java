@@ -9,14 +9,7 @@ public class Dobble {
     ArrayList<String> listaElementos;
 
     public static void main(String[] args) {
-        Dobble dobble = new Dobble(7, 10);
-        dobble.generacionMazo(dobble.numE);
-//        dobble.isDobble(dobble.cardsSet);
-        dobble.missingCards(dobble.cardsSet);
-        //System.out.println(dobble.cardsSet);
-        //ArrayList<Card> X = dobble.getMazo();
-        //Collections.shuffle(X);
-        //System.out.println(cardsSetToString(dobble.cardsSet));
+
     }
 
     public Dobble(int numElementos, int numeroCartas) {
@@ -55,7 +48,7 @@ public class Dobble {
             }
         }
         Collections.shuffle(cardsSet);
-        double Y = Math.pow(N,2) + N + 1;
+        double Y = Math.pow(N, 2) + N + 1;
         if ((num > 0) && (num < Y)) {
             ArrayList<Card> cardsSetMax = new ArrayList<Card>();
             for (i = 0; i < num; i++) {
@@ -71,11 +64,11 @@ public class Dobble {
     }
 
 
-    static int numCards(ArrayList cardsSet) {
-        return cardsSet.size();
+    int numCards() {
+        return this.cardsSet.size();
     }
 
-    static Card primeraCarta(ArrayList cardsSet) {
+    Card primeraCarta(ArrayList cardsSet) {
         return (Card) cardsSet.get(0);
     }
 
@@ -97,16 +90,16 @@ public class Dobble {
         return CardsSetToString;
     }
 
-    boolean isDobble (ArrayList<Card> cardsSet) {
+    boolean isDobble(ArrayList<Card> cardsSet) {
         int j = 0;
         // Numero correcto cartas
         int N = this.getNumE();
-        double cartasNecesarias = Math.pow(N,2) + N + 1;
+        double cartasNecesarias = Math.pow(N, 2) + N + 1;
         if (cardsSet.size() > (cartasNecesarias)) {
             return false;
         }
         // Elementos solo se repiten una vez
-        for (Card carta : cardsSet){
+        for (Card carta : cardsSet) {
             Set<String> X = carta.Elementos.stream().collect(Collectors.toSet());
             for (Card carta2 : cardsSet) {
                 Set<String> Y = carta2.Elementos.stream().collect(Collectors.toSet());
@@ -116,13 +109,13 @@ public class Dobble {
                 }
             }
         }
-        if (j > this.numCartas){
+        if (j > this.numCartas) {
             return false;
         }
         return true;
     }
 
-    void missingCards (ArrayList<Card> cardsSet) {
+    void missingCards(ArrayList<Card> cardsSet) {
         Dobble missing = new Dobble(this.numE, -1);
         missing.generacionMazo(this.numE);
         Set<Card> Y = cardsSet.stream().collect(Collectors.toSet());
