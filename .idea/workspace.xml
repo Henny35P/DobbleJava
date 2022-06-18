@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c044e8e-90c4-4050-990b-ae0a0c41bded" name="Changes" comment="Iniciando Menu">
-      <change afterPath="$PROJECT_DIR$/script.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/IMenu.java" afterDir="false" />
+    <list default="true" id="0c044e8e-90c4-4050-990b-ae0a0c41bded" name="Changes" comment="Principales funciones de Menu terminadas">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ICard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/IDobble.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/IDobbleGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Dobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dobble.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DobbleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DobbleGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,11 +51,13 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/hakuya/Projects/USACH/Paradigmas/DobbleJava",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "project.propGUI"
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -61,8 +66,8 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Menu">
-    <configuration name="Cartas" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Cartas" />
+    <configuration name="Card" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Card" />
       <module name="DobbleJava.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -89,12 +94,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Tests in 'DobbleJava'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Card" />
+        <item itemvalue="Gradle.Tests in 'DobbleJava'" />
         <item itemvalue="Application.Menu" />
         <item itemvalue="Application.DobbleGame" />
         <item itemvalue="Application.Dobble" />
-        <item itemvalue="Application.Cartas" />
       </list>
     </recent_temporary>
   </component>
@@ -106,6 +133,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652599055594</updated>
+      <workItem from="1655443535849" duration="264000" />
+      <workItem from="1655444612608" duration="1463000" />
+      <workItem from="1655496571201" duration="5628000" />
     </task>
     <task id="LOCAL-00001" summary="Init git">
       <created>1652599505034</created>
@@ -219,8 +249,18 @@
       <option name="project" value="LOCAL" />
       <updated>1655337164695</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Principales funciones de Menu terminadas">
+      <created>1655436252464</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1655436252464</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -250,6 +290,11 @@
     <MESSAGE value="play desarollo" />
     <MESSAGE value="dobble play cmopleto" />
     <MESSAGE value="Iniciando Menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Iniciando Menu" />
+    <MESSAGE value="Principales funciones de Menu terminadas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Principales funciones de Menu terminadas" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

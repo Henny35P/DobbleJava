@@ -1,46 +1,40 @@
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Scanner;
 
-public class DobbleGame {
+// Implementa interface
+public class DobbleGame implements IDobbleGame {
+//Datos
     private ArrayList<Player> players;
     private Dobble mazo;
     private int numPlayers;
 
-
+    // Metodos
+    // Constructor
     public DobbleGame(Dobble cardsSet, int numJugadores) {
         this.players = new ArrayList<Player>();
         this.numPlayers = numJugadores;
         this.mazo = cardsSet;
     }
 
+
     public static void main(String[] args) {
     }
-// Considerar como booleano/Integer
-    // Verlo con exceptions
 
-    // Editar esto
-    public static ArrayList<String> stackMode(Dobble cardsSet) {
-        ArrayList<Card> X = cardsSet.getMazo();
-        ArrayList<String> Y = new ArrayList<>();
-        for (int i = 0; i < 2; i++) {
-
-            Y.addAll(X.get(i).getElementos());
-        }
-        return Y;
-    }
-
-    void play(String X) {
+    // Permitira al jugador tomar acciones
+    @Override
+    public void play(String X) {
         if (X == "null") {
-            System.out.println(stackMode(this.mazo));
+            System.out.println(IDobbleGame.stackMode(this.mazo));
         } else if (X == "pass") {
             this.players.add(this.players.get(0));
             this.players.remove(0);
         } else if (X == "spotit") {
-            System.out.println(stackMode(this.mazo));
+            System.out.println(IDobbleGame.stackMode(this.mazo));
             Scanner myScanner = new Scanner(System.in);
             String respuesta = myScanner.nextLine();
-            String cartaCorrecta = match(stackMode(this.getCardsSet()));
+            String cartaCorrecta = match(IDobbleGame.stackMode(this.getCardsSet()));
 
             if (cartaCorrecta.equals(respuesta)) {
                 Player actual = this.players.get(0);
@@ -62,17 +56,45 @@ public class DobbleGame {
         }
     }
 
-    String match(ArrayList<String> cartas) {
+    // remplaza equals Generico
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DobbleGame that = (DobbleGame) o;
+        return numPlayers == that.numPlayers && Objects.equals(players, that.players) && Objects.equals(mazo, that.mazo);
+    }
+
+    // Transforma juego a String
+    @Override
+    public String toString() {
+        return "DobbleGame{" +
+                "players=" + players +
+                ", mazo=" + mazo +
+                ", numPlayers=" + numPlayers +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(players, mazo, numPlayers);
+    }
+
+    // Encuentra cual es el elemento en comun
+    @Override
+    public String match(ArrayList<String> cartas) {
         HashSet X = new HashSet();
         for (String elemento : cartas) {
-            if (X.add(elemento) == false) {
+            if (!X.add(elemento)) {
                 return elemento;
             }
         }
         return "ERROR";
     }
 
-    void registerPlayer(String nombre) {
+    // Registra Jugador en la partida
+    @Override
+    public void registerPlayer(String nombre) {
 
         if (this.getPlayers().size() > numPlayers) {
             System.out.println("Maximo de Jugadores"); // Poner con exceptions
@@ -87,11 +109,14 @@ public class DobbleGame {
 
     }
 
-    String whoseTurnIsIt() {
+    // Encuentra a que jugador le toca jugar
+    @Override
+    public String whoseTurnIsIt() {
         Player X = this.getPlayers().get(0);
         return X.getNombre();
     }
 
+    //Getter and Setter
     public ArrayList<Player> getPlayers() {
         return players;
     }

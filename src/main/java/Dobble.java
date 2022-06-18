@@ -2,23 +2,35 @@ import javax.sound.midi.SysexMessage;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Dobble {
+public class Dobble implements IDobble {
+    // Datos
+    // Num de elementos por carta
     int numE;
+    // Numero max de cartas
     int numCartas;
+    // Array con las cartas
     ArrayList<Card> cardsSet;
-    ArrayList<String> listaElementos;
+    // Lista con elementos que se usaran para el juego
+    List<Character> listaElementos = List.of('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
 
+    // Metodos
     public static void main(String[] args) {
 
     }
 
+    // Constructor
     public Dobble(int numElementos, int numeroCartas) {
+
         numE = numElementos;
         numCartas = numeroCartas;
 
     }
 
-    void generacionMazo(int numE) {
+    // Generacion de Mazo
+    // Se genera elemento,se agrega a carta
+    // y esa carta se agrega al array de Cartas
+    @Override
+    public void generacionMazo(int numE) {
         int N = this.numE - 1;
         int num = this.numCartas;
         ArrayList<Card> cardsSet = new ArrayList<Card>();
@@ -64,14 +76,34 @@ public class Dobble {
     }
 
 
-    int numCards() {
+    @Override
+    // Consigo cartas en mazo
+    public int numCards() {
         return this.cardsSet.size();
     }
 
-    Card primeraCarta(ArrayList cardsSet) {
+
+    // Consigue primera carta
+    @Override
+    public Card primeraCarta(ArrayList cardsSet) {
         return (Card) cardsSet.get(0);
     }
 
+    // Remplaza equals generico
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Dobble dobble = (Dobble) o;
+        return numE == dobble.numE && numCartas == dobble.numCartas && Objects.equals(cardsSet, dobble.cardsSet) && Objects.equals(listaElementos, dobble.listaElementos);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(numE, numCartas, cardsSet, listaElementos);
+    }
+
+    // Remplzaa toString generico
     @Override
     public String toString() {
         ArrayList<Card> X = this.cardsSet;
@@ -90,16 +122,18 @@ public class Dobble {
         return CardsSetToString;
     }
 
-    boolean isDobble(ArrayList<Card> cardsSet) {
+    // Verifica si mazo es valido
+    @Override
+    public boolean isDobble() {
         int j = 0;
         // Numero correcto cartas
         int N = this.getNumE();
         double cartasNecesarias = Math.pow(N, 2) + N + 1;
-        if (cardsSet.size() > (cartasNecesarias)) {
+        if (this.getMazo().size() > (cartasNecesarias)) {
             return false;
         }
         // Elementos solo se repiten una vez
-        for (Card carta : cardsSet) {
+        for (Card carta : this.getMazo()) {
             Set<String> X = carta.Elementos.stream().collect(Collectors.toSet());
             for (Card carta2 : cardsSet) {
                 Set<String> Y = carta2.Elementos.stream().collect(Collectors.toSet());
@@ -109,20 +143,24 @@ public class Dobble {
                 }
             }
         }
-        if (j > this.numCartas) {
+        if (j > this.getnumCartas()) {
             return false;
         }
         return true;
     }
 
-    void missingCards(ArrayList<Card> cardsSet) {
+    // Encuentra las cartas faltanes
+    @Override
+    public Set<Card> missingCards() {
         Dobble missing = new Dobble(this.numE, -1);
         missing.generacionMazo(this.numE);
-        Set<Card> Y = cardsSet.stream().collect(Collectors.toSet());
-        Set<Card> Z = missing.cardsSet.stream().collect(Collectors.toSet());
+        Set<Card> Y = this.getMazo().stream().collect(Collectors.toSet());
+        Set<Card> Z = this.getMazo().stream().collect(Collectors.toSet());
         Z.retainAll(Y);
+        return Z;
     }
 
+    // Getters and Setters
     public int getnumCartas() {
         return numCartas;
     }
@@ -147,11 +185,11 @@ public class Dobble {
         this.numE = numE;
     }
 
-    public ArrayList<String> getListaElementos() {
+    public List<Character> getListaElementos() {
         return listaElementos;
     }
 
-    public void setListaElementos(ArrayList<String> listaElementos) {
+    public void setListaElementos(List<Character> listaElementos) {
         this.listaElementos = listaElementos;
     }
 }
