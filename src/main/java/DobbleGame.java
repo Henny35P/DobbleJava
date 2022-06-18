@@ -94,7 +94,7 @@ public class DobbleGame implements IDobbleGame {
 
     // Registra Jugador en la partida
     @Override
-    public void registerPlayer(String nombre) {
+    public void register(String nombre) {
 
         if (this.getPlayers().size() > numPlayers) {
             System.out.println("Maximo de Jugadores"); // Poner con exceptions

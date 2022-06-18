@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c044e8e-90c4-4050-990b-ae0a0c41bded" name="Changes" comment="Principales funciones de Menu terminadas">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ICard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/IDobble.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/IDobbleGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0c044e8e-90c4-4050-990b-ae0a0c41bded" name="Changes" comment="Proyecto Terminado">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dobble.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DobbleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DobbleGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/IDobbleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/IDobbleGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +129,7 @@
       <updated>1652599055594</updated>
       <workItem from="1655443535849" duration="264000" />
       <workItem from="1655444612608" duration="1463000" />
-      <workItem from="1655496571201" duration="5628000" />
+      <workItem from="1655496571201" duration="6124000" />
     </task>
     <task id="LOCAL-00001" summary="Init git">
       <created>1652599505034</created>
@@ -256,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655436252464</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Proyecto Terminado">
+      <created>1655513851516</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1655513851516</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,7 +292,8 @@
     <MESSAGE value="dobble play cmopleto" />
     <MESSAGE value="Iniciando Menu" />
     <MESSAGE value="Principales funciones de Menu terminadas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Principales funciones de Menu terminadas" />
+    <MESSAGE value="Proyecto Terminado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Proyecto Terminado" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

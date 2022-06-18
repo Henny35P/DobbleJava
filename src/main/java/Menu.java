@@ -82,7 +82,7 @@ public class Menu implements IMenu {
     }
 
     // SubMenu que permite crear un juego
-    public void crearJuego() {
+    public void create() {
         Scanner myScanner = new Scanner(System.in);
         System.out.println("\t|Ingrese el numero de elementos por carta      |");
         int input = myScanner.nextInt();
@@ -104,7 +104,7 @@ public class Menu implements IMenu {
         String input = myScanner.nextLine();
         for (String user : registrados){
             if (input.equals(user)){
-                this.getNewJuego().registerPlayer(input);
+                this.getNewJuego().register(input);
                 System.out.println("\t|Usuario registrado correctamente              |");
                 registrado = 1;
             }
