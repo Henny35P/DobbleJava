@@ -52,7 +52,7 @@ public class Menu implements IMenu {
             switch (input) {
                 case 1:
                     while (exitSubmenu != 1) {
-                        crearJuego();
+                        create();
                         exitSubmenu = 1;
                     }
                     exitSubmenu = 0;
